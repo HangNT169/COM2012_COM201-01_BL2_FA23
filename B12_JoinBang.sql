@@ -78,3 +78,11 @@ SELECT * FROM NhanVien
 -- Các cột của table có thể + vào với nhau . Muốn đổi tên cột trong table => AS
 SELECT ID AS N'Nhân viên ID', (Ho + ' '+TenDem +' '+ Ten) AS N'Họ và tên', GioiTinh, Sdt, TrangThai
 FROm NhanVien
+-- Hiển thị danh sách nhân viên gồm : Mã nhân viên, Tên ,Giới tính, Tên chức vụ
+SELECT nv.Ma,nv.Ten,nv.GioiTinh,cv.Ten
+FROM NhanVien AS nv
+INNER JOIN ChucVu AS cv
+ON nv.IdCV = cv.id
+-- Hiển thị danh sách nhân viên gồm: Mã nhân viên, Tên , SĐT, Trạng Thái, Mã chức vụ, Tên chức vụ
+-- Hiển thị danh sách nhân viên gồm: Mã, Họ và tên, SDT, Mã chức vụ, Mã cửa hàng, Tên chức vụ, Tên cửa hàng
+-- Hiển thị danh sách nhân viên gồm: Mã, Họ và tên, SDT, Mã chức vụ, Mã cửa hàng, Tên chức vụ, Tên cửa hàng. Với Tên chức vụ bắt đầu bằng chữ T và sắp xếp theo chiều tăng dần của mã cửa hàng
